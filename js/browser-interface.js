@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
 
     $('.results-box-two').pagination({
-      totalPage: 10,
+      totalPage: 5,
       callback: function(currentPage){
 
         $.get('https://api.github.com/users/' + username + '/repos?page=' + currentPage + '&per_page=30').then(function(response){

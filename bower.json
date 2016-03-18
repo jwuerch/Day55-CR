@@ -1,9 +1,9 @@
 {
-  "name": "Blair and Jason",
+  "name": "Jason Wuerch",
   "description": "",
   "main": "index.js",
   "authors": [
-    "blair and jason"
+    "Jason Wuerch"
   ],
   "license": "MIT",
   "homepage": "https://github.com/jwuerch/Day51-Node",
@@ -18,6 +18,9 @@
   "dependencies": {
     "jquery": "^2.2.1",
     "bootstrap": "^3.3.6",
-    "moment": "^2.12.0"
+    "moment": "^2.12.0",
+    "bower": "*",
+    "install": "^1.0.4",
+    "jQuery-Pagination-Plugin": "*"
   }
 }

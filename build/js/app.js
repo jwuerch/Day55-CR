@@ -2,22 +2,33 @@
 exports.apiKey = "baf63b0862f709be303d3bd6c3ab542f49f811ab";
 
 },{}],2:[function(require,module,exports){
+var getRepos = function(response) {
+  var i = 0;
+  var arr = [];
+  while (i < response.length) {
+    arr.push((response[i].name));
+    i++;
+  }
+  return arr;
+}
+
+exports.ModuleOne = getRepos;
+
+},{}],3:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
+var getRepos = require('./../js/github.js').ModuleOne;
 
 $(document).ready(function() {
   $('.search-btn').click(function() {
     var username = $('#user-name').val();
-    console.log($('#user-name').val());
     $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response){
-      var i = 0;
-      while (i < response.length) {
-        i++;
-        console.log(response[i].name);
-      }
+      getRepos(response).forEach(function(element){
+        $('.results-box').append('<p>' + element + '</p>');
+      });
     }).fail(function(error){
       console.log(error.responseJSON.message);
     });
   });
 });
 
-},{"./../.env":1}]},{},[2]);
+},{"./../.env":1,"./../js/github.js":2}]},{},[3]);
